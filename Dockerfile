@@ -59,7 +59,7 @@ ENV \
     #JAVA_VERSION= \
     #JAVA_DEBIAN_VERSION= 
 
-    WORKDIR /scripts
+    WORKDIR=/scripts
 
 ADD logs $GEOSERVER_DATA_DIR
 ADD resources /tmp/resources
