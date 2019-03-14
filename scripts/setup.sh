@@ -55,8 +55,8 @@ array=(geoserver-$GS_VERSION-vectortiles-plugin.zip \
 for i in "${array[@]}"
 do
 #   url="https://sourceforge.net/projects/geoserver/files/GeoServer/${GS_VERSION}/extensions/${i}/download"
-    url="https://build.geoserver.org/geoserver/${GS_VERSION:0:4}x/ext-latest/${i}"
-#   url="https://build.geoserver.org/geoserver/2.15x/ext-latest/${i}"
+    url="https://build.geoserver.org/geoserver/${GS_VERSION:0:4}.x/ext-latest/${i}"
+#   url="https://build.geoserver.org/geoserver/2.15.x/ext-latest/${i}"
     if curl --output /dev/null --silent --head --fail "${url}"; then
       echo "URL exists: ${url}"
       wget --no-check-certificate -c ${url} -O /tmp/resources/plugins/${i}
