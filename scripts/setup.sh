@@ -40,7 +40,7 @@ pushd ${work_dir}/plugins
 
 #                                                                                                                        >1234<
 # Geoserver Extensions   ${GS_VERSION:0:4} truncates the value stored in GS_VERSION from char 0 to char 4, eg: GS_VERSION=2.14.0
-array= (geoserver-$GS_VERSION-vectortiles-plugin.zip \
+array=(geoserver-$GS_VERSION-vectortiles-plugin.zip \
 	geoserver-$GS_VERSION-css-plugin.zip \
 	geoserver-$GS_VERSION-csw-plugin.zip \
 	geoserver-$GS_VERSION-wps-plugin.zip \
@@ -110,7 +110,7 @@ if ls /tmp/resources/*jdk-*-linux-x64.tar.gz > /dev/null 2>&1; then \
 if  [ "$COMMUNITY_MODULES" == true ]; then
 #    array =    (geoserver-${GS_VERSION:0:4}-SNAPSHOT-geogig-plugin.zip \
 #		geoserver-${GS_VERSION:0:4}-SNAPSHOT-mbtiles-plugin.zip)
-    array = (geoserver-${GS_VERSION:0:4}-SNAPSHOT-activeMQ-broker-plugin.zip \
+    array=(geoserver-${GS_VERSION:0:4}-SNAPSHOT-activeMQ-broker-plugin.zip \
 #       geoserver-${GS_VERSION:0:4}-SNAPSHOT-authkey-plugin.zip \
 	geoserver-${GS_VERSION:0:4}-SNAPSHOT-backup-restore-plugin.zip \
 	geoserver-${GS_VERSION:0:4}-SNAPSHOT-colormap-plugin.zip \
