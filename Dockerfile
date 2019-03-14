@@ -65,17 +65,15 @@ ENV \
 ADD logs $GEOSERVER_DATA_DIR
 ADD resources /tmp/resources
 ADD scripts /scripts
-ADD resources/plugins /tmp/resources/plugins
 RUN chmod +x /scripts/*.sh
 ADD scripts/controlflow.properties $GEOSERVER_DATA_DIR
 ADD scripts/sqljdbc4-4.0.jar $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/
 
+#ADD resources/plugins /tmp/resources/plugins
 #RUN cp /resources/plugins/*.zip
 
 RUN /scripts/setup.sh \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*  \
     && dpkg --remove --force-depends  unzip
-
-
 
 CMD ["/scripts/entrypoint.sh"]
