@@ -2,15 +2,15 @@
 # Download geoserver extensions and other resources
 
 function create_dir() {
-DATA_PATH=$1
+    DATA_PATH=$1
 
-if [ ! -d ${DATA_PATH} ];
-then
-    echo "Creating" ${DATA_PATH}  "directory"
-    mkdir -p ${DATA_PATH}
-else
-    echo ${DATA_PATH} "exist - skipping creation"
-fi
+    if [ ! -d ${DATA_PATH} ];
+    then
+        echo "Creating" ${DATA_PATH}  "directory"
+        mkdir -p ${DATA_PATH}
+    else
+        echo ${DATA_PATH} "exist - skipping creation"
+    fi
 }
 
 create_dir ${GEOSERVER_DATA_DIR}
@@ -37,20 +37,19 @@ fi;
 work_dir=`pwd`
 create_dir ${work_dir}/plugins
 pushd ${work_dir}/plugins
-
-#                                                                                                                        >1234<
+                                                                                                                        >1234<
 # Geoserver Extensions   ${GS_VERSION:0:4} truncates the value stored in GS_VERSION from char 0 to char 4, eg: GS_VERSION=2.14.0
 array=(geoserver-$GS_VERSION-vectortiles-plugin.zip \
-	geoserver-$GS_VERSION-css-plugin.zip \
-	geoserver-$GS_VERSION-csw-plugin.zip \
-	geoserver-$GS_VERSION-wps-plugin.zip \
-	geoserver-$GS_VERSION-printing-plugin.zip \
-	geoserver-$GS_VERSION-libjpeg-turbo-plugin.zip \
-	geoserver-$GS_VERSION-control-flow-plugin.zip \
-	geoserver-$GS_VERSION-pyramid-plugin.zip \
-	geoserver-$GS_VERSION-gdal-plugin.zip)
+	   geoserver-$GS_VERSION-css-plugin.zip \
+	   geoserver-$GS_VERSION-csw-plugin.zip \
+	   geoserver-$GS_VERSION-wps-plugin.zip \
+	   geoserver-$GS_VERSION-printing-plugin.zip \
+	   geoserver-$GS_VERSION-libjpeg-turbo-plugin.zip \
+	   geoserver-$GS_VERSION-control-flow-plugin.zip \
+	   geoserver-$GS_VERSION-pyramid-plugin.zip \
+	   geoserver-$GS_VERSION-gdal-plugin.zip)
 # Complete list of all Geoserver Extension Plugins
-# array= (...)
+# array=(...)
 
 for i in "${array[@]}"
 do
